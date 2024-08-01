@@ -2,7 +2,8 @@
 2. Create requirements.txt file with following requirements listed:
      .dvc
      .dvc[gdrive]
-     .sklearn
+     .scikit-learn
+     . pandas
     Now install the requirements by command pip install -r requirements.txt
 3. Now let's create a README.md file and put all steps in that.
 4. Now let's create a template file to create the project folder structure with name template.py
@@ -23,3 +24,7 @@
 git remote add origin https://github.com/shubhashish1/SimpleApp_MLOPS.git
 git branch -M main
 git push -u origin main
+
+9. Then we have to put all the necessary params in the params.yaml
+10. Now let's create our first file in src to get the data in the name get_data.py
+10. Now we have to specify all the stages that are needed to be performed for the project to run in the dvc.yaml
