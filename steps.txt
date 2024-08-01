@@ -1,0 +1,15 @@
+1. Create an environment named wineq and acitvate that conda environment.
+2. Create requirements.txt file with following requirements listed:
+     .dvc
+     .dvc[gdrive]
+     .sklearn
+    Now install the requirements by command pip install -r requirements.txt
+3. Now let's create a README.md file and put all steps in that.
+4. Now let's create a template file to create the project folder structure with name template.py
+5. Put the templates code which are nothing but the dirs and files we want to create and run by command : python template.py
+6. Create a folder named data_given where we will keep our data and also it can be used as our remote data repo.
+7. put the winequality.csv file there.
+8. Now initialize git and dvc and also push the data to dvc:
+     .git init
+     .dvc init
+     .dvc add data_given/winequality.csv
