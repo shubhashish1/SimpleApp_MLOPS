@@ -27,4 +27,5 @@ git push -u origin main
 
 9. Then we have to put all the necessary params in the params.yaml
 10. Now let's create our first file in src to get the data in the name get_data.py
+11. Read the params.yaml file via this file and try to fetch the data source dynamically and create a dataframe.
 10. Now we have to specify all the stages that are needed to be performed for the project to run in the dvc.yaml
