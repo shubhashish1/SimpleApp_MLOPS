@@ -28,4 +28,18 @@ git push -u origin main
 9. Then we have to put all the necessary params in the params.yaml
 10. Now let's create our first file in src to get the data in the name get_data.py
 11. Read the params.yaml file via this file and try to fetch the data source dynamically and create a dataframe.
-10. Now we have to specify all the stages that are needed to be performed for the project to run in the dvc.yaml
+12. Now let's create a file to load that data from get_data.py put it in the data/raw through file load_data.py
+13. Create a method to store the raw data in the raw folder in the load_data.py file.
+14. Now we have to specify all the stages that are needed to be performed for the project to run in the dvc.yaml
+15. Let's update this load_data to raw folder as first stage in dvc.yaml
+        stages:
+            load_data:
+                cmd: python src/load_data.py --config=params.yaml
+                deps:
+                -src/get_data.py
+                -src/load_data.py
+                -data_given/winequality.csv
+                outs:
+                -data/raw/winequality.csv
+16. Now we can run the dvc.yaml by command dvc repro and this will create a dvc.lock file.
+17. This dvc.lock file keeps the track of every changes done in individual stages.
