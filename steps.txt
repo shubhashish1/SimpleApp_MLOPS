@@ -56,3 +56,24 @@ git push -u origin main
             - data/processed/test_winequality.csv
 21. Now we can run the dvc.yaml by command dvc repro and this will create a dvc.lock file.
 22. This dvc.lock file keeps the track of every changes done in individual stages as it runs and skips the load_data stage and then runs the split_data stage.
+23. Create a method to store the raw data in the raw folder in the train_and_evaluate.py file.
+19. Now we have to specify all the stages that are needed to be performed for the project to run in the dvc.yaml
+20. Let's update this load_data to raw folder as first stage in dvc.yaml
+        train_and_evaluate:
+            cmd: python src/train_and_evaluate.py --config=params.yaml
+            deps:
+            - data/processed/train_winequality.csv
+            - data/processed/test_winequality.csv 
+            - src/train_and_evaluate.py
+            params:
+            - estimators.ElasticNet.params.alpha
+            - estimators.ElasticNet.params.l1_ratio
+            metrics:
+            - report/scores.json:
+                cache: false
+            - report/params.json:
+                cache: false
+            outs:
+            - saved_models/model.joblib
+21. Now we can run the dvc.yaml by command dvc repro and this will create a dvc.lock file.
+22. This dvc.lock file keeps the track of every changes done in individual stages as it runs and skips the load_data stage and then runs the split_data stage.
