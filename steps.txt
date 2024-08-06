@@ -78,3 +78,14 @@ git push -u origin main
 21. Now we can run the dvc.yaml by command dvc repro and this will create a dvc.lock file.
 22. This dvc.lock file keeps the track of every changes done in individual stages as it runs and skips the load_data,split_data stage and then runs the train_and_evaluate stage.
 23. Here we are also making params.json and socres.json in report folder to track the params and metrics changes.
+24. We can check the dvc metrics or scores by command: dvc metrics show
+
+o/p: 
+
+Path                alpha    l1_ratio    mae      r2       rmse
+report\scores.json  -        -           0.65515  0.01301  0.80312
+report\params.json  0.9      0.4         -        -        -
+
+
+25. We can track the difference of metrics between old and new if we have retrained the model with modification
+    with command: dvc metrics diff
