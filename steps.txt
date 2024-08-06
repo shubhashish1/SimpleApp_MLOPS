@@ -102,3 +102,43 @@ report\scores.json  rmse      0.80312  0.805        0.00188
 report\params.json  alpha     0.9      0.88         -0.02
 report\params.json  l1_ratio  0.4      0.89         0.49
 28. To check or rollback the previous changes in git go to the commits and then copy the repo of any commit you want.
+29. Now let's write codes for testing. For that we will install pytest and tox libaries via requirements.txt
+
+TOX:
+
+It is an automation testing package which has following params:
+    . It will create a env based on our requirement for testing which can be one env or multiple envs.
+      [tox]
+          envlist=py27,py36
+
+    . [testenv]
+          deps=pytest
+    . commands= ....
+
+    To make tox work we have to create a tox.ini file in the root directory with following details:
+        [tox]
+        envlist= py37
+        skipsdist= True
+
+        [testenv]
+        dep= -rrequirements.txt
+        commands=
+        pytest -v
+    
+    Now we have to create a directory to put our all testcases that we will write for testing.
+    In that directory we will have 2 files named __init__.py, conftest.py and test_config.py
+
+    Now if we wnat to create any method in these files for testing then we have to specify with test_(functionname)
+    for the pytest to identify it. Then we can put Assert keyword to compare actual and predicted. If it satisfies
+    then testcase passed or Failed. We can run it using command pytest -v or tox
+
+    . If we want tox to recreate the env it has already created as it will always use the env in has created already
+      then use command: tox -r
+    . So tox basically runs whatever we have specified in the tox.ini file.
+
+30. Let's create a new file named setup.py which will help us to make our codes convert into packages in the folders where we have __init__.py present.
+31. Enter all the necessary details in the setup.py and then create the package with command pip install -e .
+32. Now once the package is created and installed we can check it byt command pip freeze
+33. Now let's create a wheel for this package so that we can use and install it as a package we use like numpy, pandas etc.
+    with command python setup.py sdist bdist_wheel (sdist is std distribution and bdist_wheel for building wheel for installation)
+34. Now let's comment the skipsdist= True in the tox.ini file.
