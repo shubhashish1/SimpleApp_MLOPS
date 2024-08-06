@@ -76,4 +76,5 @@ git push -u origin main
             outs:
             - saved_models/model.joblib
 21. Now we can run the dvc.yaml by command dvc repro and this will create a dvc.lock file.
-22. This dvc.lock file keeps the track of every changes done in individual stages as it runs and skips the load_data stage and then runs the split_data stage.
+22. This dvc.lock file keeps the track of every changes done in individual stages as it runs and skips the load_data,split_data stage and then runs the train_and_evaluate stage.
+23. Here we are also making params.json and socres.json in report folder to track the params and metrics changes.
