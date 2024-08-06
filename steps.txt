@@ -89,3 +89,15 @@ report\params.json  0.9      0.4         -        -        -
 
 25. We can track the difference of metrics between old and new if we have retrained the model with modification
     with command: dvc metrics diff
+26. Now we can doa testing by changing the alpha and l1_ratio in the params.yaml
+27. Then let's run following commands:
+       dvc repro
+       dvc metrics diff
+
+    This is the output we have received: (alpha changed from 0.9 to 0.88 and l1_ratio from 0.4 to 0.89)
+      Path                Metric    HEAD     workspace    Change
+report\scores.json  mae       0.65515  0.65982      0.00467
+report\scores.json  r2        0.01301  0.00838      -0.00463
+report\scores.json  rmse      0.80312  0.805        0.00188
+report\params.json  alpha     0.9      0.88         -0.02
+report\params.json  l1_ratio  0.4      0.89         0.49
