@@ -101,3 +101,4 @@ report\scores.json  r2        0.01301  0.00838      -0.00463
 report\scores.json  rmse      0.80312  0.805        0.00188
 report\params.json  alpha     0.9      0.88         -0.02
 report\params.json  l1_ratio  0.4      0.89         0.49
+28. To check or rollback the previous changes in git go to the commits and then copy the repo of any commit you want.
