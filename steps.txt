@@ -157,3 +157,5 @@ It is an automation testing package which has following params:
 41. Inside css folder let's create main.css file and inside script folder let's create index.js file.
 42. Now let's create webapp/templates folder.
 43. Now let's create html files inside templates folder as index.html, 404.html for errors, base.html.
+44. Enter the details in respective html templates.
+45. Now open app.py and put the app details.
