@@ -1,13 +1,15 @@
-{% extends base.html %}
+{% extends 'base.html' %}
 
 {% block title %}
-WineQualityTest
+WineQuality
 {% endblock title %}
 
+
 {% block custom_css %}
-<!--Custom CSS-->
-<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 {% endblock custom_css %}
+
 
 {% block body %}
 <!-- nav bar -->
@@ -24,7 +26,7 @@ WineQualityTest
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://github.com/shubhashish1/SimpleApp_MLOPS.git">source code</a>
+                <a class="nav-link" href="https://github.com/shubhashish1/SimpleApp_MLOPS">source code</a>
             </li>
         </ul>
     </div>
@@ -98,9 +100,9 @@ WineQualityTest
             </div>
         </div>
 
-{% endblock body %}
+        {% endblock body %}
 
-{% block custom_js %}
-<!-- Custom JS -->
-<script src="{{ url_for('static', filename='script/index.js') }}"></script>
-{% endblock custom_js %}
+        {% block custom_js %}
+        <!-- Custom JS -->
+        <script src="{{ url_for('static', filename='script/index.js') }}"></script>
+        {% endblock custom_js %}
