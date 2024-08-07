@@ -142,3 +142,18 @@ It is an automation testing package which has following params:
 33. Now let's create a wheel for this package so that we can use and install it as a package we use like numpy, pandas etc.
     with command python setup.py sdist bdist_wheel (sdist is std distribution and bdist_wheel for building wheel for installation)
 34. Now let's comment the skipsdist= True in the tox.ini file.
+35. We will check for the python syntax and coding standards using flake8 package of python:
+         . pip install flake8
+         . put below details in tox.ini for the testing:
+                # stop the build if there are Python syntax errors or undefined names
+                flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+                # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+                flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+36. Let's rebuild the tox env with command tox -r
+37. Now let's create few folders prediction_service, prediction_service/model and webapp
+38. Let's also create files as app.py and prediction_service/__init__.py and prediction_service/prediction.py
+39. Let's create static folder inside webapp as we will be using flask.
+40. Inside static we will be creating css and script.
+41. Inside css folder let's create main.css file and inside script folder let's create index.js file.
+42. Now let's create webapp/templates folder.
+43. Now let's create html files inside templates folder as index.html, 404.html for errors, base.html.
