@@ -160,4 +160,6 @@ It is an automation testing package which has following params:
 44. Enter the details in respective html templates.
 45. Now open app.py and put the app details for UI as well as the API testing.
 46. Now let's create folders to deploy the model with folder and file structure .github/workflows/ci-cd.yaml
-47. Check this link for the deployment after 2.00 hr : https://www.youtube.com/watch?v=IoAbE4dXb9w
+47. Check this link for the deployment after 2.00 hr : https://www.youtube.com/watch?v=IoAbE4dXb9w - video3
+48. Video 2 link: https://www.youtube.com/watch?v=n4sz9cG_B7k&list=LL&index=4
+49. Video 4 link: https://www.youtube.com/watch?v=-KmOlVSEKWg&list=LL
